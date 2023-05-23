@@ -8,10 +8,11 @@ const Apps = require('./src/apps');
 const cors = require('cors');
 
 const app = express();
-app.use(cors({
-  origin: '*',
-  methods: ['GET'],
-}));
+app.use(cors());
+// app.use(cors({
+//   origin: '*',
+//   methods: ['GET'],
+// }));
 const server = http.createServer(app);
 const wss = new WebSocket.Server({ server });
 
