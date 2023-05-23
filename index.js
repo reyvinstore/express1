@@ -8,7 +8,12 @@ const Apps = require('./src/apps');
 const cors = require('cors');
 
 const app = express();
-app.use(cors());
+
+const corsOptions = {
+  origin: 'https://reyvinexpress.vercel.app',
+};
+
+app.use(cors(corsOptions));
 // app.use(cors({
 //   origin: '*',
 //   methods: ['GET'],
