@@ -8,16 +8,10 @@ const Apps = require('./src/apps');
 const cors = require('cors');
 
 const app = express();
-
-const corsOptions = {
-  origin: 'https://reyvinexpress.vercel.app',
-};
-
-app.use(cors(corsOptions));
-// app.use(cors({
-//   origin: '*',
-//   methods: ['GET'],
-// }));
+app.use(cors({
+  origin: '*',
+  methods: ['GET'],
+}));
 const server = http.createServer(app);
 const wss = new WebSocket.Server({ server });
 
